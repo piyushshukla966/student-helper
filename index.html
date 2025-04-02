@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Font for a modern look -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Student Dashboard</h1>
+    <nav>
+      <ul>
+        <li><a href="#result-section">Result Calculator</a></li>
+        <li><a href="#resources-section">Study Resources</a></li>
+        <li><a href="#planner-section">Study Planner</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <!-- Marks Calculator Section wrapped in a form -->
+    <section id="result-section" class="container">
+      <h2>Calculate Your Marks</h2>
+      <form id="marksForm" onreset="resetResults()">
+        <div class="form-group">
+          <label for="name">Student Name:</label>
+          <input type="text" id="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label for="rollnumber">Roll Number:</label>
+          <input type="number" id="rollnumber" placeholder="Enter your roll number">
+        </div>
+        <h3>Enter Your Marks</h3>
+        <div class="form-group">
+          <label for="hindi">Hindi:</label>
+          <input type="number" class="subject" id="hindi" placeholder="Marks in Hindi">
+        </div>
+        <div class="form-group">
+          <label for="math">Math:</label>
+          <input type="number" class="subject" id="math" placeholder="Marks in Math">
+        </div>
+        <div class="form-group">
+          <label for="science">Science:</label>
+          <input type="number" class="subject" id="science" placeholder="Marks in Science">
+        </div>
+        <div class="form-group">
+          <label for="english">English:</label>
+          <input type="number" class="subject" id="english" placeholder="Marks in English">
+        </div>
+        <div class="form-group">
+          <label for="sst">Social Studies:</label>
+          <input type="number" class="subject" id="sst" placeholder="Marks in Social Studies">
+        </div>
+        <div class="form-group">
+          <label for="computer">Computer:</label>
+          <input type="number" class="subject" id="computer" placeholder="Marks in Computer">
+        </div>
+        <div class="button-group">
+          <button type="button" onclick="grade()">Calculate Result</button>
+          <input type="reset" value="Reset">
+        </div>
+      </form>
+      <div id="result" class="result-container">
+        <h3>Total Marks: <span id="totalmarks"></span></h3>
+        <h3>Percentage: <span id="percentage"></span></h3>
+        <h3>Grade: <span id="grade"></span></h3>
+      </div>
+    </section>
+
+    <!-- Study Resources Section -->
+    <section id="resources-section" class="container">
+      <h2>Study Resources</h2>
+      <p>Enhance your study experience with our curated resources:</p>
+      <ul class="resource-list">
+        <li><a href="https://www.khanacademy.org" target="_blank">Khan Academy</a></li>
+        <li><a href="https://www.coursera.org" target="_blank">Coursera</a></li>
+        <li><a href="https://www.edx.org" target="_blank">edX</a></li>
+        <li><a href="https://www.freecodecamp.org" target="_blank">freeCodeCamp</a></li>
+      </ul>
+    </section>
+
+    <!-- Study Planner Section -->
+    <section id="planner-section" class="container">
+      <h2>Study Planner</h2>
+      <p>Plan your study schedule effectively. Enter a topic and the number of hours you'd like to study:</p>
+      <div class="form-group">
+        <label for="study-topic">Study Topic:</label>
+        <input type="text" id="study-topic" placeholder="e.g., Mathematics">
+      </div>
+      <div class="form-group">
+        <label for="study-time">Study Duration (hours):</label>
+        <input type="number" id="study-time" placeholder="e.g., 2">
+      </div>
+      <div class="button-group">
+        <button type="button" onclick="planStudy()">Plan Study</button>
+      </div>
+      <div id="planner-result" class="result-container">
+        <h3>Your study plan will appear here!</h3>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Developed by <strong>PIYUSH KUMAR SHUKLA</strong></p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
